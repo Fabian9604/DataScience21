@@ -1,9 +1,12 @@
 class ListKeeper(dict):
     def __init__(self):
-        example_list = [1,2,3,4,5]
-        self['example'] = example_list
+        dict.__init__(self)
+        self['example'] = [1,2,3,4,5]
+        print (type(self))
     def show(self):
-        self.keys()
+        #print(self)
+        print (self.keys())
+        print('a')
     def add(self,name, new_list):
         self[name]=new_list
     def delete(self,name):
@@ -14,3 +17,4 @@ class ListKeeper(dict):
         self[name].extend(new_list)
 
 
+# noch kommentieren und Aufgabe nochmal durchlesen!
