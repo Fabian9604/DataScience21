@@ -15,9 +15,12 @@ class ListKeeper(dict):
     # delete is able to delete a list in the ListKeeper object, specified by its name
     def delete(self,name):
         self.pop(name)
-    # sort returns the names of the lists, but sorted
-    def sort(self,name):
-        return self[name].sort()
+    # sort returns the names of the lists, but sorted. It does no influence the list in the ListKeeper
+    def sortit(self,name):
+        sorted_list = self[name][:]
+        sorted_list.sort()
+        print(self)
+        return (sorted_list)
     # append extends the specified list with the new_list
     def append(self,name,new_list):
         self[name].extend(new_list)
